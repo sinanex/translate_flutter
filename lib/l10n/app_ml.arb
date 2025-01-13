@@ -1,5 +1,6 @@
 {
   "@@locale": "ml",
   "helloWorld": "ഫ്ലട്ടർ ഡെമോ പേജ്",
-  "youHavePushedTheButton": "നിങ്ങൾ ബട്ടൺ ഇത്ര തവണ അമർത്തിയിട്ടുണ്ട്:"
+  "youHavePushedTheButton": "നിങ്ങൾ ബട്ടൺ ഇത്ര തവണ അമർത്തിയിട്ടുണ്ട്:",
+  "language": "ഭാഷ മാറ്റുക"
 }

@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
 
-        Text("change language"),
+        Text(AppLocalizations.of(context)!.language),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

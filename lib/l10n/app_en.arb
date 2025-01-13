@@ -1,5 +1,6 @@
 {
   "@@locale": "en",
   "helloWorld": "Flutter Demo Page",
-  "youHavePushedTheButton": "You have pushed the button this many times:"
+  "youHavePushedTheButton": "You have pushed the button this many times:",
+  "language":"change language"
 }
