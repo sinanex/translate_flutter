@@ -3,10 +3,10 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:traslation/controller.dart';
+
 void main() {
   runApp(ChangeNotifierProvider(
-    create: (context) => ChangeLang(),
-    child: const MyApp()));
+      create: (context) => ChangeLang(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -21,10 +21,7 @@ class MyApp extends StatelessWidget {
         AppLocalizations.delegate,
       ],
       locale: Provider.of<ChangeLang>(context).locale,
-     supportedLocales: [
-      Locale('en'),
-      Locale('ml')
-     ], 
+      supportedLocales: [Locale('en'), Locale('ml')],
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -62,26 +59,31 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-             Text(
+            Text(
               AppLocalizations.of(context)!.youHavePushedTheButton,
             ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-
-        Text(AppLocalizations.of(context)!.language),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            TextButton(onPressed: (){
-              Provider.of<ChangeLang>(context,listen: false).changeLan(Locale('ml'));
-            }, child: Text("malayalam")),
-            TextButton(onPressed: (){
-                            Provider.of<ChangeLang>(context,listen: false).changeLan(Locale('en'));
-            }, child: Text("english")),
-          ],
-        )
+            Text(AppLocalizations.of(context)!.language),
+            Consumer<ChangeLang>(
+              builder:(context, value, child) =>  Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  TextButton(
+                      onPressed: () {
+                          value.changeLan(Locale('ml'));
+                      },
+                      child: Text("malayalam")),
+                  TextButton(
+                      onPressed: () {
+                       value.changeLan(Locale('en'));
+                      },
+                      child: Text("english")),
+                ],
+              ),
+            )
           ],
         ),
       ),
