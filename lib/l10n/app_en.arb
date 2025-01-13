@@ -1,0 +1,11 @@
+{
+  "@@locale": "en",
+  "helloWorld": "Flutter Demo Page",
+  "@helloWorld": {
+    "description": "The greeting message shown on the home screen"
+  },
+  "youHavePushedTheButton": "You have pushed the button this many times:",
+  "@youHavePushedTheButton": {
+    "description": "The message displayed when the button count is shown"
+  }
+}
