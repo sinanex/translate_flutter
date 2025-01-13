@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+import 'package:traslation/controller.dart';
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => ChangeLang(),
+    child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -16,7 +20,7 @@ class MyApp extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
         AppLocalizations.delegate,
       ],
-      locale: Locale('ml'),
+      locale: Provider.of<ChangeLang>(context).locale,
      supportedLocales: [
       Locale('en'),
       Locale('ml')
@@ -65,6 +69,19 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+
+        Text("change language"),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            TextButton(onPressed: (){
+              Provider.of<ChangeLang>(context,listen: false).changeLan(Locale('ml'));
+            }, child: Text("malayalam")),
+            TextButton(onPressed: (){
+                            Provider.of<ChangeLang>(context,listen: false).changeLan(Locale('en'));
+            }, child: Text("english")),
+          ],
+        )
           ],
         ),
       ),

@@ -1,11 +1,5 @@
 {
   "@@locale": "ml",
   "helloWorld": "ഫ്ലട്ടർ ഡെമോ പേജ്",
-  "@helloWorld": {
-    "description": "The greeting message shown on the home screen"
-  },
-  "youHavePushedTheButton": "നിങ്ങൾ ബട്ടൺ ഇത്ര തവണ അമർത്തിയിട്ടുണ്ട്:",
-  "@youHavePushedTheButton": {
-    "description": "The message displayed when the button count is shown"
-  }
+  "youHavePushedTheButton": "നിങ്ങൾ ബട്ടൺ ഇത്ര തവണ അമർത്തിയിട്ടുണ്ട്:"
 }
